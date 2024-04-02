@@ -10,7 +10,13 @@ const CreateTeam = ({ onSuccess, selectedUsers }) => {
             const response = await axios.post(`https://user-management-app-flame.vercel.app/api/team`, {
                 teamName,
                 selectedUserIds: selectedUsers
-            });
+            }, {
+                withCredentials: true,
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Credentials': true,
+                },
+              });
             console.log('Team created successfully');
             onSuccess(response.data);
         } catch (error) {

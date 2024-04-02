@@ -32,7 +32,13 @@ const UserList = ({ users, searchTerm, domainFilters, genderFilters, availabilit
 
     const handleEditUser = async (userId) => {
         try {
-            const response = await axios.get(`https://user-management-app-flame.vercel.app/api/users/${userId}`);
+            const response = await axios.get(`https://user-management-app-flame.vercel.app/api/users/${userId}`, {
+                withCredentials: true,
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Credentials': true,
+                },
+              });
             setSelectedUser(response.data);
         } catch (error) {
             console.error('Error fetching user details:', error);
@@ -41,7 +47,13 @@ const UserList = ({ users, searchTerm, domainFilters, genderFilters, availabilit
 
     const handleDeleteUser = async (userId) => {
         try {
-            await axios.delete(`https://user-management-app-flame.vercel.app/api/users/${userId}`);
+            await axios.delete(`https://user-management-app-flame.vercel.app/api/users/${userId}`, {
+                withCredentials: true,
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Credentials': true,
+                },
+              });
             console.log('User deleted successfully');
         } catch (error) {
             console.error('Error deleting user:', error);
