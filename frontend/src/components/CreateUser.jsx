@@ -32,11 +32,11 @@ const CreateUser = ({ userData }) => {
         e.preventDefault();
         try {
             if (userData) {
-                await axios.put(`${import.meta.env.VITE_REACT_APP_API_URL}/api/users/${userData._id}`, formData);
+                await axios.put(`https://user-management-app-flame.vercel.app/api/users/${userData._id}`, formData);
                 console.log('User updated successfully');
                 navigate('/');
             } else {
-                await axios.post(`${import.meta.env.VITE_REACT_APP_API_URL}/api/users`, formData);
+                await axios.post(`https://user-management-app-flame.vercel.app/api/users`, formData);
                 console.log('User created successfully');
                 navigate('/');
             }

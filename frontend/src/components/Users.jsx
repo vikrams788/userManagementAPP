@@ -19,7 +19,7 @@ const Users = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/api/users`, {
+                const response = await axios.get(`https://user-management-app-flame.vercel.app/api/users`, {
                     params: {
                         page: currentPage + 1,
                         searchTerm: searchTerm,
