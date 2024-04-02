@@ -27,13 +27,7 @@ const Users = () => {
                         genderFilters: genderFilters,
                         availabilityFilters: availabilityFilters
                     }
-                }, {
-                    withCredentials: true,
-                    headers: {
-                      'Content-Type': 'application/json',
-                      'Access-Control-Allow-Credentials': true,
-                    },
-                  });
+                });
                 const data = response.data;
                 setUsers(data.users);
                 setPageCount(data.totalPages);

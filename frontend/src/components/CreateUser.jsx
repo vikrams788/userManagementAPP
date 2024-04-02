@@ -32,23 +32,11 @@ const CreateUser = ({ userData }) => {
         e.preventDefault();
         try {
             if (userData) {
-                await axios.put(`https://user-management-app-flame.vercel.app/api/users/${userData._id}`, formData, {
-                    withCredentials: true,
-                    headers: {
-                      'Content-Type': 'application/json',
-                      'Access-Control-Allow-Credentials': true,
-                    },
-                  });
+                await axios.put(`https://user-management-app-flame.vercel.app/api/users/${userData._id}`, formData);
                 console.log('User updated successfully');
                 navigate('/');
             } else {
-                await axios.post(`https://user-management-app-flame.vercel.app/api/users`, formData, {
-                    withCredentials: true,
-                    headers: {
-                      'Content-Type': 'application/json',
-                      'Access-Control-Allow-Credentials': true,
-                    },
-                  });
+                await axios.post(`https://user-management-app-flame.vercel.app/api/users`, formData);
                 console.log('User created successfully');
                 navigate('/');
             }
