@@ -36,7 +36,7 @@ const CreateUser = ({ userData }) => {
                 console.log('User updated successfully');
                 navigate('/');
             } else {
-                await axios.post(`https://user-management-app-flame.vercel.app/api/users`, formData);
+                await axios.post('https://user-management-app-flame.vercel.app/api/users', formData);
                 console.log('User created successfully');
                 navigate('/');
             }

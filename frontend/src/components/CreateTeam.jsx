@@ -7,7 +7,7 @@ const CreateTeam = ({ onSuccess, selectedUsers }) => {
 
     const handleCreateTeam = async () => {
         try {
-            const response = await axios.post(`https://user-management-app-flame.vercel.app/api/team`, {
+            const response = await axios.post('https://user-management-app-flame.vercel.app/api/team', {
                 teamName,
                 selectedUserIds: selectedUsers
             });
