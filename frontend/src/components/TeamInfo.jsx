@@ -8,7 +8,7 @@ const TeamInfo = ({ team }) => {
         const fetchMembersDetails = async () => {
             try {
                 const promises = team.members.map(memberId =>
-                    axios.get(`https://user-management-app-flame.vercel.app/api/users/${memberId}`)
+                    axios.get(`https://usermanagementapp-qz6g.onrender.com/api/users/${memberId}`)
                 );
                 const responses = await Promise.all(promises);
                 const membersData = responses.map(response => response.data);

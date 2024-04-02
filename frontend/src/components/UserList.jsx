@@ -32,7 +32,7 @@ const UserList = ({ users, searchTerm, domainFilters, genderFilters, availabilit
 
     const handleEditUser = async (userId) => {
         try {
-            const response = await axios.get(`https://user-management-app-flame.vercel.app/api/users/${userId}`);
+            const response = await axios.get(`https://usermanagementapp-qz6g.onrender.com/api/users/${userId}`);
             setSelectedUser(response.data);
         } catch (error) {
             console.error('Error fetching user details:', error);
@@ -41,7 +41,7 @@ const UserList = ({ users, searchTerm, domainFilters, genderFilters, availabilit
 
     const handleDeleteUser = async (userId) => {
         try {
-            await axios.delete(`https://user-management-app-flame.vercel.app/api/users/${userId}`);
+            await axios.delete(`https://usermanagementapp-qz6g.onrender.com/api/users/${userId}`);
             console.log('User deleted successfully');
         } catch (error) {
             console.error('Error deleting user:', error);
